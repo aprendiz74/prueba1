@@ -1,9 +1,10 @@
 {
-  "name": "#ProgramadorFitness",
-  "short_name": "#ProgramadorFitness",
-  "description": "Bienvenid@s a #ProgramadorFitness, serie de videos, donde te daré consejos para llevar una vida saludable y evitar el sedentarismo. Recuerda... mente sana en cuerpo sano :)",
+  "name": "ZOOM MUSICAL",
+  "short_name": "ZOOM MUSICAL",
+  "description": "Nuestro objetivo es Informar y fomentar la música.Los cortes musicales abarcan diversos estilos 
+  y programas de primer nivel para todos que disfrutan de la buena musica.",
   "background_color": "#2B2B2B",
-  "theme_color": "#F0DB4F",
+  "theme_color": "#da913c",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest",
