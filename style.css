@@ -84,3 +84,21 @@ p {
     width: 100%;
     height: 100%;
   }
+.reproductor-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .play-button {
+        width: 70px; /* Aumenta el tamaño del botón */
+        height: 70px;
+    }
+    .logo {
+        width: 120px; /* Ajusta el tamaño del logo */
+    }
+    .texto {
+        font-size: 18px; /* Aumenta el tamaño del texto */
+    }
+}
+
