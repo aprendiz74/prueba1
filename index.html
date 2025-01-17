@@ -1,150 +1,216 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
-<center>
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ZOOM MUSICAL</title>
   <meta name="description" content="Escucha la mejor música de todos los tiempos">
-  <meta name="theme-color" content="#da913c">
+
+  <meta name="theme-color" content="#F0DB4F">
   <meta name="MobileOptimized" content="width">
   <meta name="HandheldFriendly" content="true">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="shortcut icon" type="image/png" href="https://aprendiz74.github.io/WEB/img/ProgramadorFitness.png">
-  <link rel="apple-touch-icon" href="https://aprendiz74.github.io/WEB/img/ProgramadorFitness.png">
-  <link rel="apple-touch-startup-image" href="https://aprendiz74.github.io/WEB/img/ProgramadorFitness.png">
-  <link rel="manifest" href="https://aprendiz74.github.io/WEB/manifest.json">
+  <link rel="shortcut icon" type="image/png" href="./img/ProgramadorFitness.png">
+  <link rel="apple-touch-icon" href="./ProgramadorFitness.png">
+  <link rel="apple-touch-startup-image" href="./ProgramadorFitness.png">
+  <link rel="manifest" href="./manifest.json">
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-  
-  <!-- Estilos CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* General */
-    body {
-      font-family: 'Raleway', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #2c0f57;
-      color: #fff;
-    }
-    h1 {
-      color: #F0DB4F;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+  /* General Styles */
+  body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffb10138;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-    /* Header */
-    header.Header {
-      text-align: center;
-      padding: 20px;
-      background-color: #292b2c;
-    }
-    header.Header h1 {
-      font-size: 2.5rem;
-      margin: 10px 0;
-    }
-    header.Header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
+  .Main {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 25px 15px;
+    background-color: #ede59e5e;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
 
-    /* Main Content */
+  .player {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fffffe38;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .vinyl {
+    position: relative;
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eeeeee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .vinyl img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .metadata h2 {
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: #333;
+  }
+
+  .metadata .album-info {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  .controls button {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    color: #ffffff;
+    background: #007bff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .controls button:hover {
+    background: #0056b3;
+  }
+
+  .volume-control {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .volume-control label {
+    font-size: 1em;
+    color: #333;
+    margin-right: 15px;
+  }
+
+  .volume-control input[type="range"] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 10px;
+    border-radius: 5px;
+    background: #cbc2c2;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+
+  .volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .volume-control input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  .volume-control input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #c9c4c4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .volume-control input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  /* Responsiveness */
+  @media (max-width: 600px) {
     .Main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 30px;
+      padding: 20px 10px;
     }
 
-    iframe {
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      margin-top: 20px;
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
+    .vinyl {
+      width: 160px;
+      height: 160px;
     }
 
-    /* Footer */
-    footer {
-      background-color: #292b2c;
-      color: #fff;
-      padding: 10px 0;
-      text-align: center;
-      margin-top: 30px;
-    }
-    
-    footer a {
-      color: #F0DB4F;
-      text-decoration: none;
-      font-weight: bold;
+    .metadata h2 {
+      font-size: 1.5em;
     }
 
-    /* Responsiveness */
-    @media (max-width: 768px) {
-      header.Header h1 {
-        font-size: 2rem;
-      }
-      header.Header p {
-        font-size: 1rem;
-      }
-      iframe {
-        height: 315px;
-      }
+    .controls button {
+      padding: 12px 20px;
+      font-size: 1em;
     }
-  </style>
+  }
+
+  /* Vinyl Animation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+
 </head>
 
 <body>
-</br>
-</br>
-  
+  <header class="Header">
+   
+  </header>
 
-  <!-- Contenido Principal -->
   <main class="Main">
-
-
-
-  </main>
-
-
-  <!-- Scripts -->
-  <script src="https://aprendiz74.github.io/WEB/script.js"></script>
-
-<br/>
-<br/>
-<br/>
-
-<div class="player">
+  <!-- Player Container -->
+  <div class="player">
     <div class="vinyl" id="vinyl">
-      <img id="cover" src="https://blogger.googleusercontent.com/img/a/AVvXsEgHucU6hbJwDADMODkGoUaBTKCflLT37iDXeX58d6SdYN0GfZFTYZ0eyWuMhGZmPNoyblOMOOVf0hdlrdfrzxO13ayyZ9AoLtPoIJ8gmWx2u4nOzay4TDdeDt-zc1xvNY6DDs9JeJynar9Y2EdAaEx69ln61nBCwGYqzyt0bGEtVpJAHpkBWSURtxJXFwY=s160" alt="Album Cover" />
+      <img id="cover" src="https://blogger.googleusercontent.com/img/a/AVvXsEgHucU6hbJwDADMODkGoUaBTKCflLT37iDXeX58d6SdYN0GfZFTYZ0eyWuMhGZmPNoyblOMOOVf0hdlrdfrzxO13ayyZ9AoLtPoIJ8gmWx2u4nOzay4TDdeDt-zc1xvNY6DDs9JeJynar9Y2EdAaEx69ln61nBCwGYqzyt0bGEtVpJAHpkBWSURtxJXFwY=s160" alt="Album Cover">
     </div>
     <div class="metadata">
       <h2 id="title">ZOOM MUSICAL</h2>
-      <p class="album-info" id="album"></p>
+      <p class="album-info" id="album">Tu emisora favorita</p>
     </div>
     <div class="controls">
       <button id="play-pause">Play</button>
     </div>
     <div class="volume-control">
-      <label for="volume">Volume:</label>
-      <input id="volume" type="range" min="0" max="1" step="0.1" value="1" class="slider" />
+      <label for="volume">Volumen:</label>
+      <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
     </div>
-    <audio id="audio" src="https://stream.zeno.fm/dfxxkhvkxs8uv" preload="auto" crossorigin="anonymous"></audio>
+    <audio id="audio" src="https://stream.zeno.fm/dfxxkhvkxs8uv" preload="auto"></audio>
   </div>
-  <div class="social-links">
- <!-- Incluye Font Awesome desde su CDN -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-
+</main>
 
 
   <script>
@@ -170,75 +236,8 @@
     volumeSlider.addEventListener('input', (e) => {
       audio.volume = e.target.value;
     });
-
-    // Error handling
-    audio.addEventListener('error', (e) => {
-      console.error('Error loading or playing the audio stream:', e);
-    });
   </script>
-</div>
-
-
-
-<br/>
-<br/>
-<br/>
-
-
-<div class="scrolling-container">
-  <div class="scrolling-text">
-    Gracias por escucharnos...
-  </div>
-</div>
-
-<style>
-  /* Contenedor fijo para evitar que todo se mueva */
-  .scrolling-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Asegura que el texto no se salga del área visible */
-    background: linear-gradient(90deg, #6a11cb17, #cb5e1138); /* Fondo degradado */
-    padding: 6px 0;
-    border-radius: 10px;
-    box-sizing: border-box;
-  }
-
-  .scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    color: #ffeb3b; /* Color del texto */
-    font-size: 20px; /* Ajusta el tamaño del texto */
-    font-weight: bold;
-    animation: scroll-left 10s linear infinite;
-  }
-
-  /* Animación del texto */
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  /* Ajustes para dispositivos móviles */
-  @media (max-width: 768px) {
-    .scrolling-text {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .scrolling-text {
-      font-size: 16px;
-    }
-  }
-</style>
-
-
-
-
 </body>
 
 </html>
+
