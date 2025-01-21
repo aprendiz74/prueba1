@@ -1,104 +1,139 @@
-/* Custom Properties */
-:root {
-  --main-color: #9888c9;
-  --main-modal-color: rgba(251 228 205);
-  --second-color: #2B2B2B;
-  --second-modal-color: rgba(43, 43, 43, .5);
-}
-
-html {
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--second-color);
-  background-color: var(--main-modal-color);
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  margin: 2rem auto;
-  overflow-x: hidden;
-  max-width: 800px;
-}
-
-a {
-  font-weight: bold;
-  color: var(--second-color);
-  transition: all .3s ease-out;
-}
-
-a:hover {
-  color: var(--second-modal-color);
-}
-
-p {
-  padding: 1rem;
-  font-size: 1.25rem;
-}
-
-::selection {
-  background-color: var(--second-color);
-  color: var(--main-color);
-}
-
-.Header {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('https://blogger.googleusercontent.com/img/a/AVvXsEhsxOHKmQDsZ6XI4us3oK3Zwan25oy_unYav9GtY7KEfnC1JMbZqiQpZI3VXyiplF6vF6YGJyUZ7ktDCZ-Ioq0zDOQhRnDSwcAk_wPvLpIvLBu8fPPyORWMbLYhJ1ZUKhjBUWZYTBoV6iyV2ThqvuOD0DjZ3BmzvmzqlRdioTLzU1xUzflHfFhYbQ7_6d0=s1024') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #f9f584;
 }
 
-.Header h1 { word-wrap: break-word; }
+.player {
+  text-align: center;
+  width: 90%;
+  max-width: 300px;
+}
 
-.Header img {
+.vinyl {
+  position: relative;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
-  display: block;
-  max-width: 150px;
+  border-radius: 50%;
+  background: #000;
+  border: 5px solid #555;
+  box-sizing: border-box;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+  transition: all 0.3s ease-in-out;
+}
+
+.vinyl img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
   border-radius: 50%;
 }
 
-.Header nav {
-  padding: 2rem 0;
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 3rem;
+.controls {
+  margin-top: 20px;
 }
 
-.Main {
+.play-pause-btn {
+  background-color: #5e2760;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.play-pause-btn:hover {
+  background-color: #d97d6e;
+  transform: scale(1.1);
+}
+
+.volume-container {
+  margin: 20px auto;
+  width: 60%;
+  text-align: center;
+}
+
+.volume-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
   position: relative;
-  margin: 0 auto;
-  padding-bottom: 56.25%; /* 16:9 */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.Main iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.volume-bar-fill {
+  height: 100%;
+  background-color: red;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.volume-thumb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.metadata {
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-.reproductor-container {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-@media (max-width: 768px) {
-    .play-button {
-        width: 70px; /* Aumenta el tamaño del botón */
-        height: 70px;
-    }
-    .logo {
-        width: 120px; /* Ajusta el tamaño del logo */
-    }
-    .texto {
-        font-size: 18px; /* Aumenta el tamaño del texto */
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+.scrolling-container {
+  margin: 20px auto;
+  width: 80%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #6a11cb94, #2575fc42);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
