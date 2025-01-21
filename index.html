@@ -1,351 +1,262 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8'/>
-    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-    <title>ZOOM MUSICAL</title>
-    
-    <!-- Manifest para PWA -->
-    
-    <link href='https://cinema074.blogspot.com/pwa/manifest.json' rel='manifest'/>
-    <!-- Estilo general -->
-    <b:skin><![CDATA[
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <title>Zoom Musical</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Bienvenid@s">
+    <meta name="theme-color" content="#5e2760">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="apple-touch-startup-image" href="./img/logo.png">
+    <link rel="manifest" href="./manifest.json">
+    <style>
       body {
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: url('https://blogger.googleusercontent.com/img/a/AVvXsEhsxOHKmQDsZ6XI4us3oK3Zwan25oy_unYav9GtY7KEfnC1JMbZqiQpZI3VXyiplF6vF6YGJyUZ7ktDCZ-Ioq0zDOQhRnDSwcAk_wPvLpIvLBu8fPPyORWMbLYhJ1ZUKhjBUWZYTBoV6iyV2ThqvuOD0DjZ3BmzvmzqlRdioTLzU1xUzflHfFhYbQ7_6d0=s1024') no-repeat center center fixed;
+        background-size: cover;
         font-family: Arial, sans-serif;
-        background-color: #2c0f57;
-        color: #dfdcd0;
+        color: #f9f584;
+      }
+
+      .player {
+        text-align: center;
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .vinyl {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: #000;
+        border: 5px solid #555;
+        box-sizing: border-box; /* Asegura que el borde no cambie el tamaño */
+        animation: spin 3s linear infinite;
+        animation-play-state: paused;
+        transition: all 0.3s ease-in-out; /* Controla cualquier cambio de tamaño o transformación */
+      }
+
+      .vinyl img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+      }
+
+      .controls {
+        margin-top: 20px;
+      }
+
+      /* Botón Play/Pause modificado */
+      .play-pause-btn {
+        background-color: #5e2760;
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .play-pause-btn:hover {
+        background-color: #d97d6e;
+        transform: scale(1.1);
+      }
+
+      .volume-container {
+        margin: 20px auto;
+        width: 60%;
         text-align: center;
       }
-      /* Otros estilos... */
-    ]]></b:skin>
-  </head>
-  <body>
-    <!-- Contenedor principal -->
-    <b:section class='main' id='main' showaddelement='yes'>
-      <b:widget id='HTML1' locked='false' title='' type='HTML'>
-        <b:widget-settings>
-          <b:widget-setting name='content'><![CDATA[<!doctype html>
 
-
-    
-    
-    
-On line
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-    <link rel="stylesheet" href="https://github.com/aprendiz74/online/blob/main/style.css" /> <!-- Vincula el archivo CSS -->
-    
-    
-    
-    
-    
-    
-    
-    <link rel="shortcut icon" href="https://tuhosting.com/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="https://tuhosting.com/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="https://tuhosting.com/img/logo.png" />
-    <link rel="apple-touch-startup-image" href="https://tuhosting.com/img/logo.png" />
-    <link rel="manifest" href="https://github.com/aprendiz74/online/blob/main/manifest.json" /> <!-- Vincula el archivo manifest -->
-    
-    <!-- Agregar la conexión al archivo JS -->
-    <script src="https://aprendiz74.github.io/online/script.js" defer></script>
-
-
-    <!-- Contenido de tu página aquí -->
-    <div class="container">
-        <!-- Sección de texto -->
-        <section id="texto" class="section">
-            <h5 class="center-align">La que esta de moda</h5>
-            <p class="flow-text center-align">Aquí encontrarás música, videos y mucho más. ¡Disfruta de nuestra plataforma progresiva!</p>
-        </section>
-
-        <!-- Sección de imagen -->
-<center>
-
-<div class="player">
-  <div class="vinyl" id="vinyl">
-    <img id="cover" src="https://i.ibb.co/kDyKn2V/512-2-2.jpg" alt="Album Cover" />
-  </div>
-  <div class="metadata">
-    <h4 id="title">ZOOM MUSICAL</h4>
-  </div>
-  <div class="controls">
-    <button id="play-pause" class="play-pause-btn">Play</button>
-  </div>
-  <br />
-  <div class="volume-container">
-    <div class="volume-bar" id="volume-bar">
-      <div class="volume-bar-fill" id="volume-fill"></div>
-      <div class="volume-thumb" id="volume-thumb"></div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="scrolling-container">
-    <div class="scrolling-text">Gracias por escucharnos...</div>
-  </div>
-  <audio id="audio" src="https://stream.zeno.fm/dfxxkhvkxs8uv" preload="auto" crossorigin="anonymous"></audio>
-</div>
-
-<style>
-  .player {
-    text-align: center;
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .vinyl {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background: #000;
-    border: 5px solid #555;
-    animation: spin 3s linear infinite;
-    animation-play-state: paused;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .vinyl img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    height: 70%;
-    border-radius: 50%;
-  }
-
-  .controls {
-    margin-top: 20px;
-  }
-
-  .play-pause-btn {
-    background-color: #5e2760;
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .play-pause-btn:hover {
-    background-color: #d97d6e;
-    transform: scale(1.1);
-  }
-
-  .volume-container {
-    margin: 20px auto;
-    width: 60%;
-    text-align: center;
-  }
-
-  .volume-bar {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-
-  .volume-bar-fill {
-    height: 100%;
-    background-color: red;
-    border-radius: 5px;
-    width: 50%;
-  }
-
-  .volume-thumb {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: red;
-    border: 1px solid #fff;
-    cursor: pointer;
-  }
-
-  .scrolling-container {
-    margin: 20px auto;
-    width: 80%;
-    overflow: hidden;
-    background: linear-gradient(90deg, #6a11cb94, #2575fc42);
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 18px;
-    color: #fff;
-    font-weight: bold;
-    animation: scroll-left 10s linear infinite;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes scroll-left {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-</style>
-
-<script>
-  const audio = document.getElementById('audio');
-  const playPauseButton = document.getElementById('play-pause');
-  const vinyl = document.getElementById('vinyl');
-  const volumeBar = document.getElementById('volume-bar');
-  const volumeFill = document.getElementById('volume-fill');
-  const volumeThumb = document.getElementById('volume-thumb');
-
-  let volume = 0.5;
-  audio.volume = volume;
-  volumeFill.style.width = `${volume * 100}%`;
-  volumeThumb.style.left = `${volume * 100}%`;
-
-  const updateVolume = (e) => {
-    const rect = volumeBar.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left;
-    volume = Math.min(Math.max(offsetX / rect.width, 0), 1);
-    audio.volume = volume;
-    volumeFill.style.width = `${volume * 100}%`;
-    volumeThumb.style.left = `${volume * 100}%`;
-  };
-
-  volumeThumb.addEventListener('mousedown', (e) => {
-    e.preventDefault();
-    const mouseMoveHandler = (e) => updateVolume(e);
-    const mouseUpHandler = () => {
-      document.removeEventListener('mousemove', mouseMoveHandler);
-      document.removeEventListener('mouseup', mouseUpHandler);
-    };
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
-  });
-
-  volumeBar.addEventListener('click', updateVolume);
-
-  playPauseButton.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-      playPauseButton.textContent = 'Pause';
-      vinyl.style.animationPlayState = 'running';
-    } else {
-      audio.pause();
-      playPauseButton.textContent = 'Play';
-      vinyl.style.animationPlayState = 'paused';
-    }
-  });
-</script>
-
-
-
-
-
-
-
-
-        <section id="imagenes" class="section">
-            <div class="row">
-                <div class="col s12 m6 l6">
-                    <img src="https://tuhosting.com/assets/images/ejemplo.jpg" alt="Imagen Ejemplo" class="responsive-img" />
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de reproductor de video -->
-        <section id="reproductor" class="section">
-            <h4 class="center-align">Reproductor de Video</h4>
-            <div class="video-container">
-                <video width="100%" controls>
-                    <source src="https://tuhosting.com/assets/videos/ejemplo.mp4" type="video/mp4">
-                    Tu navegador no soporta este video.
-                </source></video>
-            </div>
-        </section>
-    </center></div>
-
-    <script src="https://github.com/aprendiz74/online/blob/main/sw.js" type="module"></script> <!-- Vincula el archivo Service Worker -->
-
-</!doctype>]]></b:widget-setting>
-        </b:widget-settings>
-        <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-      </b:widget>
-    </b:section>
-
-    <!-- Script para registrar el Service Worker -->
-    <script>
-      if (&#39;serviceWorker&#39; in navigator) {
-        navigator.serviceWorker.register(&#39;https://cinema074.blogspot.com//pwa/service-worker.js&#39;)
-  .then(reg =&gt; console.log(&#39;Service Worker registrado:&#39;, reg))
-  .catch(err =&gt; console.error(&#39;Error al registrar el Service Worker:&#39;, err));
-
+      /* Barra de volumen personalizada */
+      .volume-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+        position: relative;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
       }
-    </script>
-          <br/>
-          <br/>
-          <br/>
+
+      .volume-bar-fill {
+        height: 100%;
+        background-color: red;
+        border-radius: 5px;
+        width: 50%; /* Establecer valor inicial del volumen al 50% */
+      }
+
+      .volume-thumb {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: red;
+        border: 1px solid #fff;
+        cursor: pointer;
+      }
+
+      .metadata {
+        margin-top: 10px;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .scrolling-container {
+        margin: 20px auto;
+        width: 80%;
+        overflow: hidden;
+        background: linear-gradient(90deg, #6a11cb94, #2575fc42);
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .scrolling-text {
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        animation: scroll-left 10s linear infinite;
+      }
+
+      @keyframes scroll-left {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="player">
+      <div class="vinyl" id="vinyl">
+        <img id="cover" src="https://i.ibb.co/kDyKn2V/512-2-2.jpg" alt="Album Cover" />
+      </div>
+      <div class="metadata">
+        <h4 id="title">ZOOM MUSICAL</h4>
+      </div>
+      <div class="controls">
+        <!-- Nuevo botón Play/Pause -->
+        <button id="play-pause" class="play-pause-btn">Play</button>
+      </div>
+<br/>
 
 
-    <!-- Scripts para el reproductor de audio -->
+      <div class="volume-container">
+        <div class="volume-bar" id="volume-bar">
+          <div class="volume-bar-fill" id="volume-fill"></div>
+          <div class="volume-thumb" id="volume-thumb"></div>
+        </div>
+      <br/>
+    <br/>
+      
+      <div class="scrolling-container">
+        <div class="scrolling-text">Gracias por escucharnos...</div>
+      </div>
+
+      <audio id="audio" src="https://stream.zeno.fm/dfxxkhvkxs8uv" preload="auto" crossorigin="anonymous"></audio>
+    </div>
+
     <script>
-      const audio = document.getElementById(&#39;audio&#39;);
-      const playPauseButton = document.getElementById(&#39;play-pause&#39;);
-      const vinyl = document.getElementById(&#39;vinyl&#39;);
-      const volumeSlider = document.getElementById(&#39;volume&#39;);
+      const audio = document.getElementById('audio');
+      const playPauseButton = document.getElementById('play-pause');
+      const vinyl = document.getElementById('vinyl');
+      const volumeBar = document.getElementById('volume-bar');
+      const volumeFill = document.getElementById('volume-fill');
+      const volumeThumb = document.getElementById('volume-thumb');
 
-      playPauseButton.addEventListener(&#39;click&#39;, () =&gt; {
+      // Valor inicial de volumen
+      let volume = 0.5;
+      audio.volume = volume;
+      volumeFill.style.width = `${volume * 100}%`; // Establece la visualización del volumen
+      volumeThumb.style.left = `${volume * 100}%`; // Posiciona el control del volumen
+
+      // Función para actualizar el volumen
+      const updateVolume = (e) => {
+        const rect = volumeBar.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        volume = Math.min(Math.max(offsetX / rect.width, 0), 1); // Asegura que el volumen esté entre 0 y 1
+        audio.volume = volume;
+        volumeFill.style.width = `${volume * 100}%`; // Actualiza el relleno de la barra
+        volumeThumb.style.left = `${volume * 100}%`; // Mueve el control del volumen
+      };
+
+      // Evento para manejar el arrastre del control del volumen
+      volumeThumb.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        const mouseMoveHandler = (e) => updateVolume(e);
+        const mouseUpHandler = () => {
+          document.removeEventListener('mousemove', mouseMoveHandler);
+          document.removeEventListener('mouseup', mouseUpHandler);
+        };
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      });
+
+      // Evento de clic para actualizar volumen
+      volumeBar.addEventListener('click', updateVolume);
+
+      // Play/pause toggle
+      playPauseButton.addEventListener('click', () => {
         if (audio.paused) {
           audio.play();
-          playPauseButton.textContent = &#39;Pause&#39;;
-          vinyl.style.animationPlayState = &#39;running&#39;;
+          playPauseButton.textContent = 'Pause'; // Cambia el texto del botón
+          vinyl.style.animationPlayState = 'running';
         } else {
           audio.pause();
-          playPauseButton.textContent = &#39;Play&#39;;
-          vinyl.style.animationPlayState = &#39;paused&#39;;
+          playPauseButton.textContent = 'Play'; // Cambia el texto del botón
+          vinyl.style.animationPlayState = 'paused';
         }
       });
-
-      volumeSlider.addEventListener(&#39;input&#39;, (e) =&gt; {
-        audio.volume = e.target.value;
-      });
-
-      audio.addEventListener(&#39;error&#39;, (e) =&gt; {
-        console.error(&#39;Error loading or playing the audio stream:&#39;, e);
-      });
     </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then((registration) => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch((error) => {
+        console.error('Error al registrar el Service Worker:', error);
+      });
+  }
+</script>
+
   </body>
 </html>
